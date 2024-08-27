@@ -20,4 +20,4 @@ This is a short and simple WSGI web interface for Whitaker's Words as currently 
 
 ## Usage
 
-The web interface should now be usable as: https://my-web-site/whitakers-words?word=bellum
+The web interface should now be usable as: `https://my-web-site/whitakers-words?word=bellum`
