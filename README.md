@@ -24,8 +24,8 @@ The web interface should now be usable as: `https://my-web-site/whitakers-words?
 
 The results resemble standard Whitaker's Words output, with minimal styling.
 
-[!NOTE]
-Lemmas have a link to the corresponding entries in [Logeion](https://logeion.uchicago.edu/).
+>[!NOTE]
+>Lemmas have a link to the corresponding entries in [Logeion](https://logeion.uchicago.edu/).
 
-[!TIP]
-In `words.py` there are two variables worthy of being mentioned. One is `acceptable_referers`, a list of acceptable referers, in case you would like the interface to only be accessible from a pre-designated website link. This functionality will only be enforced if the variable `need_referer` is set to `True`.
+>[!TIP]
+>In `words.py` there are two variables worthy of being mentioned. One is `acceptable_referers`, a list of acceptable referers, in case you would like the interface to only be accessible from a pre-designated website link. This functionality will only be enforced if the variable `need_referer` is set to `True`.
