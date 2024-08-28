@@ -4,8 +4,8 @@ import sys, os, re
 import subprocess
 
 words_bin = "bin/words"
-words_path = "/var/www/wsgi/words/"
-acceptable_referers = ['anastrophe2.lib.uchicago.edu', 'logeion.org', 'logeion.uchicago.edu']
+words_path = "/var/www/wsgi/words-wsgi/"
+acceptable_referers = ['your.referer.com'] # Replace with a list of approved referers
 logeion_url = "https://logeion.uchicago.edu/"
 need_referer = False
 
