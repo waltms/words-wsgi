@@ -3,9 +3,10 @@ from html import escape
 import sys, os, re
 import subprocess
 
-words_bin = "bin/words"
-words_path = "/var/www/wsgi/words-wsgi/"
-acceptable_referers = ['your.referer.com'] # Replace with a list of approved referers
+#words_bin = "bin/words"
+words_bin = "bin/words-static"
+words_path = "/var/www/wsgi/words/"
+acceptable_referers = ['anastrophe2.lib.uchicago.edu', 'logeion.org', 'logeion.uchicago.edu']
 logeion_url = "https://logeion.uchicago.edu/"
 need_referer = False
 
@@ -35,12 +36,20 @@ def word_sanitize(ws):
     ws = ws.replace('Unexpected exception in PAUSE', '')
     return ws
 
+def word_validate(word):
+    if word.islpaha():
+        return  True
+    return False
+
 def parse_word(word):
-    words = os.path.join(words_path, words_bin)
-    command = ' '.join([words, word])
-    word = subprocess.run([command], capture_output=True, shell=True, cwd=words_path, encoding='utf8')
-    if word.stdout:
-        return word.stdout
+
+    if word_validate(word):
+        words = os.path.join(words_path, words_bin)
+        #command = ' '.join([words, word])
+        #word = subprocess.run([command], capture_output=True, shell=True, cwd=words_path, encoding='utf8')
+        word = subprocess.run([words, word], capture_output=True, cwd=words_path, encoding='utf8')
+        if word.stdout:
+            return word.stdout
     return None
 
 def words_to_html(words_result):
