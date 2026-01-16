@@ -37,8 +37,8 @@ def word_sanitize(ws):
     return ws
 
 def word_validate(word):
-    if word.islpaha():
-        return  True
+    if word.isalpha():
+        return True
     return False
 
 def parse_word(word):
